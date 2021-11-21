@@ -3,12 +3,12 @@ import { createSlice } from '@reduxjs/toolkit';
 export const notesSlice = createSlice({
     name: 'notes',
     initialState: {
-        items: JSON.parse(localStorage.getItem("react-notes-app")),
+        items: [],
         searchText: '',
     },
     reducers: {
         addNote: (state, action) => {
-            state.items.push(action.payload);
+            state.items = [...state.items, action.payload];
         },
         searchNote: (state, action) => {
             state.searchText = action.payload
