@@ -31,15 +31,16 @@ function TakeNoteArea() {
     };
 
     return (
-        <Paper sx={{ width: '75%', padding: 2 }}>
+        <Paper sx={{ width: '75%', padding: 2, margin: '1rem auto' }}>
             <form onSubmit={handleSubmit}>
                 <textarea
                     style={{
                         border: 'none',
                         outline: 'none',
                         resize: 'none',
-                        width: '90%',
+                        width: '95%',
                         height: '10rem',
+                        fontSize: '1.2rem',
                     }}
                     placeholder="Enter your note here..."
                     value={text}
@@ -94,7 +95,7 @@ function TakeNoteArea() {
                         type="submit"
                         variant="contained"
                         color="success"
-                        sx={{ padding: '0.8rem 3rem', borderRadius: "3rem" }}
+                        sx={{ padding: '0.8rem 3rem', borderRadius: '3rem' }}
                     >
                         Add
                     </Button>
