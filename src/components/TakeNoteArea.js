@@ -1,5 +1,5 @@
 import { Check } from '@mui/icons-material';
-import { Button, FormControl, Radio, RadioGroup } from '@mui/material';
+import { Button, Paper, Radio, RadioGroup } from '@mui/material';
 import { styled } from '@mui/styles';
 import { Box } from '@mui/system';
 import { nanoid } from '@reduxjs/toolkit';
@@ -13,8 +13,8 @@ const StyledRadio = styled(({ color, ...other }) => <Radio {...other} />)({
     border: 0,
     borderRadius: '50%',
     color: 'white',
-    height: 48,
-    width: 48,
+    height: 40,
+    width: 40,
     margin: 8,
 });
 
@@ -31,57 +31,76 @@ function TakeNoteArea() {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <textarea
-                rows="10"
-                cols="20"
-                style={{ border: 'none', outline: 'none', resize: 'none' }}
-                placeholder="Enter your note here..."
-                value={text}
-                onChange={(e) => setText(e.target.value)}
-            />
-            <Box>
-                <Box>
-                    <RadioGroup
-                        row
-                        value={bgColor}
-                        onChange={(e) => setBgColor(e.target.value)}
+        <Paper sx={{ width: '75%', padding: 2 }}>
+            <form onSubmit={handleSubmit}>
+                <textarea
+                    style={{
+                        border: 'none',
+                        outline: 'none',
+                        resize: 'none',
+                        width: '90%',
+                        height: '10rem',
+                    }}
+                    placeholder="Enter your note here..."
+                    value={text}
+                    onChange={(e) => setText(e.target.value)}
+                />
+                <Box
+                    sx={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                    }}
+                >
+                    <Box>
+                        <RadioGroup
+                            row
+                            value={bgColor}
+                            onChange={(e) => setBgColor(e.target.value)}
+                        >
+                            <StyledRadio
+                                color="#F06292"
+                                value="#F06292"
+                                checkedIcon={<Check sx={{ color: '#fff' }} />}
+                                icon={<Check sx={{ color: '#F06292' }} />}
+                            />
+                            <StyledRadio
+                                color="#BA68C8"
+                                value="#BA68C8"
+                                checkedIcon={<Check sx={{ color: '#fff' }} />}
+                                icon={<Check sx={{ color: '#BA68C8' }} />}
+                            />
+                            <StyledRadio
+                                color="#FFD54F"
+                                value="#FFD54F"
+                                checkedIcon={<Check sx={{ color: '#fff' }} />}
+                                icon={<Check sx={{ color: '#FFD54F' }} />}
+                            />
+                            <StyledRadio
+                                color="#4FC3F7"
+                                value="#4FC3F7"
+                                checkedIcon={<Check sx={{ color: '#fff' }} />}
+                                icon={<Check sx={{ color: '#4FC3F7' }} />}
+                            />
+                            <StyledRadio
+                                color="#AED581"
+                                value="#AED581"
+                                checkedIcon={<Check sx={{ color: '#fff' }} />}
+                                icon={<Check sx={{ color: '#AED581' }} />}
+                            />
+                        </RadioGroup>
+                    </Box>
+                    <Button
+                        type="submit"
+                        variant="contained"
+                        color="success"
+                        sx={{ padding: '0.8rem 3rem', borderRadius: "3rem" }}
                     >
-                        <StyledRadio
-                            color="#F06292"
-                            value="#F06292"
-                            checkedIcon={<Check sx={{ color: '#fff' }} />}
-                            icon={<Check sx={{ color: '#F06292' }} />}
-                        />
-                        <StyledRadio
-                            color="#BA68C8"
-                            value="#BA68C8"
-                            checkedIcon={<Check sx={{ color: '#fff' }} />}
-                            icon={<Check sx={{ color: '#BA68C8' }} />}
-                        />
-                        <StyledRadio
-                            color="#FFD54F"
-                            value="#FFD54F"
-                            checkedIcon={<Check sx={{ color: '#fff' }} />}
-                            icon={<Check sx={{ color: '#FFD54F' }} />}
-                        />
-                        <StyledRadio
-                            color="#4FC3F7"
-                            value="#4FC3F7"
-                            checkedIcon={<Check sx={{ color: '#fff' }} />}
-                            icon={<Check sx={{ color: '#4FC3F7' }} />}
-                        />
-                        <StyledRadio
-                            color="#AED581"
-                            value="#AED581"
-                            checkedIcon={<Check sx={{ color: '#fff' }} />}
-                            icon={<Check sx={{ color: '#AED581' }} />}
-                        />
-                    </RadioGroup>
+                        Add
+                    </Button>
                 </Box>
-                <Button>Add</Button>
-            </Box>
-        </form>
+            </form>
+        </Paper>
     );
 }
 
