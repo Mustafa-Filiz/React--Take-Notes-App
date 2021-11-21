@@ -8,10 +8,21 @@ import TakeNoteArea from './components/TakeNoteArea';
 function App() {
     return (
         <Box className="App">
-            <Header />
-            <SearchArea />
-            <TakeNoteArea />
-            <DisplayNotes />
+            <Box
+                sx={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'flex-start',
+                    alignItems: 'center',
+                    width: '80%',
+                    margin: 'auto',
+                }}
+            >
+                <Header />
+                <SearchArea />
+                <TakeNoteArea />
+                <DisplayNotes />
+            </Box>
         </Box>
     );
 }

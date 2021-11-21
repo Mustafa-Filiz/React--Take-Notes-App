@@ -8,10 +8,12 @@ import {
 } from '@mui/material';
 import React from 'react';
 import { makeStyles } from '@mui/styles';
+import { useDispatch } from 'react-redux';
+import { deleteNote } from '../redux/notes/notesSlice';
 
 const useStyles = makeStyles({
     noteCard: {
-        width: '18rem',
+        width: '14.3rem',
         height: '15rem',
         padding: 10,
         margin: 5,
@@ -21,6 +23,8 @@ const useStyles = makeStyles({
 
 function NoteCard({ note }) {
     const classes = useStyles();
+	const dispatch = useDispatch()
+	
     return (
         <Card
             className={classes.noteCard}
@@ -30,7 +34,7 @@ function NoteCard({ note }) {
                 <Typography>{note.text}</Typography>
             </CardContent>
             <CardActions sx={{ position: 'absolute', right: 0, bottom: 0 }}>
-                <IconButton>
+                <IconButton onClick={() => dispatch(deleteNote(note.id))}>
                     <DeleteForeverRounded />
                 </IconButton>
             </CardActions>

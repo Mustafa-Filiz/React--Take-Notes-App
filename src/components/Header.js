@@ -3,7 +3,7 @@ import React from 'react'
 
 function Header() {
 	return (
-		<Typography variant="h2">
+		<Typography variant="h3">
 			Take Notes
 		</Typography>
 	)

@@ -31,7 +31,7 @@ function TakeNoteArea() {
     };
 
     return (
-        <Paper sx={{ width: '75%', padding: 2, margin: '1rem auto' }}>
+        <Paper sx={{ width: '75%', padding: 2, margin: '0.5rem auto' }}>
             <form onSubmit={handleSubmit}>
                 <textarea
                     style={{
