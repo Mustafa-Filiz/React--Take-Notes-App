@@ -8,14 +8,16 @@ export const notesSlice = createSlice({
     },
     reducers: {
         addNote: (state, action) => {
-            state.items = [...state.items, action.payload];
+            state.items.push(action.payload);
         },
         searchNote: (state, action) => {
-            state.searchText = action.payload
+            state.searchText = action.payload;
         },
         deleteNote: (state, action) => {
-            state.items = state.items.filter((item) => item.id !== action.payload)
-        }
+            state.items = state.items.filter(
+                (item) => item.id !== action.payload
+            );
+        },
     },
 });
 
