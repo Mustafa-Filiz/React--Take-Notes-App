@@ -26,8 +26,13 @@ function TakeNoteArea() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(addNote({ id: nanoid(), text, bgColor }));
-        setText('');
+        if (text) {
+            dispatch(addNote({ id: nanoid(), text, bgColor }));
+            setText('');
+        } else {
+            alert('Chat flies, Notes persists. 📝');
+            setText('');
+        }
     };
 
     return (

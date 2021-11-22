@@ -13,7 +13,7 @@ import { deleteNote } from '../redux/notes/notesSlice';
 
 const useStyles = makeStyles({
     noteCard: {
-        width: '14.3rem',
+        width: '17rem',
         height: '15rem',
         padding: 10,
         margin: 5,
